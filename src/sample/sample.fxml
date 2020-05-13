@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <ImageView fx:id="imageView" fitHeight="380.0" fitWidth="380.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="bntOpen" layoutX="402.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickBtnOpen" prefHeight="25.0" prefWidth="185.0" text="Завантажити зображення" />
+      <Label fx:id="labelFilename" layoutX="402.0" layoutY="49.0" prefHeight="17.0" prefWidth="185.0" text="Зображення не завантажено" />
+      <Slider fx:id="sliderR" blockIncrement="1.0" layoutX="447.0" layoutY="108.0" min="-100.0" prefHeight="32.0" prefWidth="140.0" />
+      <Label layoutX="403.0" layoutY="106.0" text="R">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Slider fx:id="sliderG" blockIncrement="1.0" layoutX="447.0" layoutY="143.0" min="-100.0" prefHeight="32.0" prefWidth="140.0" />
+      <Label layoutX="402.0" layoutY="141.0" text="G">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Slider fx:id="sliderB" blockIncrement="1.0" layoutX="447.0" layoutY="178.0" min="-100.0" prefHeight="32.0" prefWidth="140.0" />
+      <Label layoutX="404.0" layoutY="176.0" text="B">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSave" layoutX="403.0" layoutY="227.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="25.0" prefWidth="185.0" text="Зберегти зображення" />
+      <Button fx:id="btnRestore" layoutX="403.0" layoutY="74.0" mnemonicParsing="false" onAction="#onClickBtnRestore" prefHeight="25.0" prefWidth="185.0" text="Відновити початковий стан" />
+   </children>
+</AnchorPane>
