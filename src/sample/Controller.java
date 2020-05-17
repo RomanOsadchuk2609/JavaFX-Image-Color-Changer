@@ -55,7 +55,8 @@ public class Controller {
 
 	@FXML
 	public void initialize() {
-		FILE_CHOOSER.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image files", "*.png", "*.PNG", "*.jpg", "*.JPG", "*.JPEG"));
+		FILE_CHOOSER.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image files",
+				"*.bmp", "*.BMP","*.png", "*.PNG", "*.jpg", "*.JPG", "*.JPEG"));
 		sliderR.valueProperty().addListener((observable, oldValue, newValue) -> changeImageColor((Double) newValue, oldG, oldB));
 		sliderG.valueProperty().addListener((observable, oldValue, newValue) -> changeImageColor(oldR, (Double) newValue, oldB));
 		sliderB.valueProperty().addListener((observable, oldValue, newValue) -> changeImageColor(oldR, oldG, (Double) newValue));
@@ -90,6 +91,7 @@ public class Controller {
 
 	private void showImage() {
 		if (bufferedImage != null) {
+			imageView.setImage(null);
 			imageView.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
 		}
 	}
@@ -122,10 +124,10 @@ public class Controller {
 			labelFilename.setText(filename);
 			try {
 				bufferedImage = ImageIO.read(file);
+				initRGB();
 				sliderR.setValue(0);
 				sliderG.setValue(0);
 				sliderB.setValue(0);
-				initRGB();
 				showImage();
 			} catch (IOException e) {
 				e.printStackTrace();
